@@ -20,6 +20,8 @@ def main():
         last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
         last_chat_name = last_update['message']['chat']['first_name']
+        
+        greet_bot.send_message(last_chat_id, 'I\'m only bot after all')
 
         if last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
             greet_bot.send_message(last_chat_id, 'Good Morning  {}'.format(last_chat_name))
